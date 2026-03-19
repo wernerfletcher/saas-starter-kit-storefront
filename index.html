@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angular + Spring Boot SaaS Starter Kit | Ship in Days, Not Months</title>
+    <title>Angular 21 + Spring Boot 4 SaaS Starter Kit | Ship in Days, Not Months</title>
     <meta name="description" content="Production-ready starter kit with 40 custom components, authentication, billing, and admin dashboard. Launch your SaaS faster.">
     <style>
         * {
@@ -14,32 +14,22 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: #0a0a0a;
-            color: #fafafa;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f1f5f9;
             line-height: 1.6;
         }
         
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        /* Hero */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 4rem 2rem;
+            padding: 2rem 2rem;
         }
         
         .tech-badges {
             display: flex;
             gap: 1.5rem;
             margin-bottom: 2.5rem;
+            justify-content: center;
         }
         
         .tech-badge {
@@ -50,8 +40,6 @@
             padding: 0.5rem 1rem;
             border-radius: 100px;
             border: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.875rem;
-            color: #a3a3a3;
         }
         
         .tech-badge svg {
@@ -62,16 +50,21 @@
         h1 {
             font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
             letter-spacing: -0.02em;
-            max-width: 800px;
         }
         
-        .hero-sub {
-            font-size: 1.25rem;
-            color: #a3a3a3;
-            max-width: 600px;
-            margin-bottom: 2.5rem;
+        .tagline {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 3rem;
+            font-size: 1.125rem;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
         }
         
         .cta-group {
@@ -85,24 +78,25 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: #f59e0b;
-            color: #0a0a0a;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #0f172a;
             padding: 1rem 2.5rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.125rem;
+            font-size: 1.25rem;
             transition: all 0.2s;
         }
         
         .btn-primary:hover {
-            background: #fbbf24;
             transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(245, 158, 11, 0.3);
         }
         
         .trust-text {
             font-size: 0.875rem;
             color: #737373;
+            text-align: center;
         }
         
         .trust-text span {
@@ -113,8 +107,8 @@
         .stats {
             display: flex;
             justify-content: center;
-            gap: 4rem;
-            padding: 4rem 2rem;
+            gap: 3rem;
+            padding: 3rem 0;
             border-top: 1px solid rgba(255,255,255,0.05);
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
@@ -144,6 +138,7 @@
             text-align: center;
             font-size: 2rem;
             margin-bottom: 3rem;
+            color: #f59e0b;
         }
         
         .benefits-grid {
@@ -164,29 +159,32 @@
         .benefit-icon {
             font-size: 1.5rem;
             margin-bottom: 1rem;
+            text-align: center;
         }
         
         .benefit h3 {
             font-size: 1.125rem;
             margin-bottom: 0.5rem;
+            color: #f59e0b;
+            text-align: center;
         }
         
         .benefit p {
-            color: #a3a3a3;
+            color: #94a3b8;
             font-size: 0.9375rem;
+            text-align: center;
         }
         
         /* Tech Stack */
         .tech-section {
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             text-align: center;
-            background: rgba(255,255,255,0.01);
         }
         
         .tech-section h2 {
-            font-size: 1.25rem;
-            color: #737373;
-            font-weight: 400;
+            font-size: 1.5rem;
+            color: #f8fafc;
+            font-weight: 600;
             margin-bottom: 2rem;
         }
         
@@ -194,24 +192,25 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 4rem;
+            gap: 6rem;
         }
         
         .tech-logo {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
         }
         
         .tech-logo svg {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
         }
         
         .tech-logo span {
-            font-size: 0.875rem;
-            color: #a3a3a3;
+            font-size: 1.125rem;
+            color: #94a3b8;
+            font-weight: 500;
         }
         
         /* FAQ */
@@ -230,11 +229,13 @@
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 0.75rem;
+            color: #f8fafc;
         }
         
         .faq-item p {
-            color: #a3a3a3;
+            color: #94a3b8;
             font-size: 0.9375rem;
+            line-height: 1.6;
         }
         
         /* Final CTA */
@@ -245,16 +246,19 @@
         }
         
         .final-cta h2 {
-            font-size: 2rem;
+            font-size: 1.75rem;
             margin-bottom: 1rem;
+            color: #f59e0b;
         }
         
         .final-cta p {
-            color: #a3a3a3;
-            margin-bottom: 2rem;
-            max-width: 500px;
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            font-size: 1.0625rem;
+            line-height: 1.7;
         }
         
         /* Footer */
@@ -286,26 +290,11 @@
             color: #525252;
             font-size: 0.75rem;
         }
-        
-        @media (max-width: 768px) {
-            .stats {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            
-            .tech-logos {
-                gap: 2rem;
-            }
-            
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
+    <div class="container">
+        <!-- Tech Badges -->
         <div class="tech-badges">
             <div class="tech-badge">
                 <!-- Angular Logo SVG -->
@@ -314,172 +303,169 @@
                     <path d="M12 2v20l8.5-2.5L22 7L12 2z" fill="#C3002F"/>
                     <path d="M12 4.5L6.5 17h2l1.1-2.8h4.8l1.1 2.8h2L12 4.5zm1.6 8h-3.2L12 8.1l1.6 4.4z" fill="#fff"/>
                 </svg>
-                Angular 19
+                Angular 21
             </div>
             <div class="tech-badge">
-                <!-- Spring Boot Logo SVG -->
-                <svg viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="10" fill="#6DB33F"/>
-                    <path d="M7 8c0-1 1-2 3-2s3 1 3 2c0 2-3 2-3 4h2c0-1 3-2 3-4 0-2-2-3-5-3S5 6 5 8c0 4 6 4 6 8h2c0-5-6-5-6-8z" fill="#fff"/>
-                    <circle cx="12" cy="19" r="1" fill="#fff"/>
+                <!-- Spring Boot Logo SVG (icon only - the leaf) -->
+                <svg viewBox="0 0 420 420" fill="none">
+                    <path fill="#6DB33F" d="M366.9,29c-5.8,14.1-13.3,26.6-21.6,37.8c-36.6-37.3-87.8-61-144.3-61C90,5.8-0.7,96-0.7,207.4 c0,58.2,24.9,110.6,64.4,147.6l7.5,6.7c34.9,29.5,80.3,47.4,129.7,47.4c106,0,193.3-82.7,200.8-187.1 C407.7,171.3,392.3,106.4,366.9,29z M92.9,356.7c-5.8,7.5-16.6,8.3-24.1,2.5s-8.3-16.6-2.5-24.1s16.6-8.3,24.1-2.5 C97.5,338.4,98.7,349.2,92.9,356.7z M365.7,296.4c-49.5,66.1-155.9,43.7-223.7,47c0,0-12.1,0.8-24.1,2.5c0,0,4.6-2.1,10.4-4.2 c47.8-16.6,70.3-20,99.4-34.9c54.5-27.9,108.9-89,119.8-152.2c-20.8,60.7-84,113.1-141.4,134.3c-39.5,14.6-110.6,28.7-110.6,28.7 l-2.9-1.7c-48.2-23.7-49.9-128.5,38.3-162.2c38.7-15,75.3-6.7,117.3-16.6c44.5-10.4,96.1-43.7,116.8-87.3 C388.1,120.1,416.4,229,365.7,296.4z"/>
                 </svg>
                 Spring Boot 4
             </div>
         </div>
         
-        <h1>Ship Your SaaS in Days,<br>Not Months</h1>
+        <h1>Angular + Spring Boot SaaS Starter Kit</h1>
+        <p class="tagline">Ship your SaaS in days, not weeks. 40 custom components, auth, billing, and admin panel — no Material, no Bootstrap.</p>
         
-        <p class="hero-sub">Everything you need to launch: authentication, billing, admin dashboard, and 40 custom components. One-time payment, yours forever.</p>
+        <div class="hero">
+            <div class="cta-group">
+                <a href="#" class="btn-primary">
+                    Get Started — $299
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <p class="trust-text">
+                    <span>Instant download</span>•<span>Lifetime updates</span>
+                </p>
+            </div>
+        </div>
         
-        <div class="cta-group">
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">40+</div>
+                <div class="stat-label">Custom Components</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Hours Saved</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">323</div>
+                <div class="stat-label">Unit Tests</div>
+            </div>
+        </div>
+        
+        <!-- Benefits -->
+        <div class="benefits">
+            <h2 class="section-title">Everything You Need</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <div class="benefit-icon">🔐</div>
+                    <h3>Authentication Ready</h3>
+                    <p>JWT-based auth with Spring Security. Register, login, password reset — all working out of the box.</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">💳</div>
+                    <h3>Stripe Integration</h3>
+                    <p>Subscriptions, one-time payments, and customer portal. Tax handling included.</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Admin Dashboard</h3>
+                    <p>User management, analytics, and role-based access control. Ready for your business logic.</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">🎨</div>
+                    <h3>40 Custom Components</h3>
+                    <p>No Material, no Bootstrap. Clean CSS variables, dark mode, fully customizable.</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">🐳</div>
+                    <h3>Docker Ready</h3>
+                    <p>Production Docker Compose files included. Deploy anywhere in minutes.</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">🧪</div>
+                    <h3>Well Tested</h3>
+                    <p>323 unit tests with comprehensive coverage. Ship with confidence.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tech Stack -->
+        <div class="tech-section">
+            <h2>Built with proven technologies</h2>
+            
+            <div class="tech-logos">
+                <div class="tech-logo">
+                    <!-- Angular Logo SVG -->
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L2 7l1.5 12.5L12 22l8.5-2.5L22 7L12 2z" fill="#DD0031"/>
+                        <path d="M12 2v20l8.5-2.5L22 7L12 2z" fill="#C3002F"/>
+                        <path d="M12 4.5L6.5 17h2l1.1-2.8h4.8l1.1 2.8h2L12 4.5zm1.6 8h-3.2L12 8.1l1.6 4.4z" fill="#fff"/>
+                    </svg>
+                    <span>Angular 21</span>
+                </div>
+                
+                <div class="tech-logo">
+                    <!-- Spring Boot Logo SVG (icon only - the leaf) -->
+                    <svg viewBox="0 0 420 420" fill="none">
+                        <path fill="#6DB33F" d="M366.9,29c-5.8,14.1-13.3,26.6-21.6,37.8c-36.6-37.3-87.8-61-144.3-61C90,5.8-0.7,96-0.7,207.4 c0,58.2,24.9,110.6,64.4,147.6l7.5,6.7c34.9,29.5,80.3,47.4,129.7,47.4c106,0,193.3-82.7,200.8-187.1 C407.7,171.3,392.3,106.4,366.9,29z M92.9,356.7c-5.8,7.5-16.6,8.3-24.1,2.5s-8.3-16.6-2.5-24.1s16.6-8.3,24.1-2.5 C97.5,338.4,98.7,349.2,92.9,356.7z M365.7,296.4c-49.5,66.1-155.9,43.7-223.7,47c0,0-12.1,0.8-24.1,2.5c0,0,4.6-2.1,10.4-4.2 c47.8-16.6,70.3-20,99.4-34.9c54.5-27.9,108.9-89,119.8-152.2c-20.8,60.7-84,113.1-141.4,134.3c-39.5,14.6-110.6,28.7-110.6,28.7 l-2.9-1.7c-48.2-23.7-49.9-128.5,38.3-162.2c38.7-15,75.3-6.7,117.3-16.6c44.5-10.4,96.1-43.7,116.8-87.3 C388.1,120.1,416.4,229,365.7,296.4z"/>
+                    </svg>
+                    <span>Spring Boot 4</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ -->
+        <div class="faq">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h3>Is this right for my project?</h3>
+                <p>Perfect for B2B SaaS, admin panels, and dashboards. If you're building with Angular and want a Java backend, this saves you weeks of setup.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>What's the refund policy?</h3>
+                <p>14-day money-back guarantee. If it's not what you expected, email us for a full refund. No questions asked.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>What does the license allow?</h3>
+                <p>Use it for unlimited personal and commercial projects. You can modify it however you like. Just don't resell or redistribute the kit itself.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Do you offer support?</h3>
+                <p>Documentation and code comments are included. For questions, email support is available. Bug reports are always welcome.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Will I get updates?</h3>
+                <p>Yes, lifetime access to all updates. Major version upgrades may be separate, but minor updates and bug fixes are included.</p>
+            </div>
+        </div>
+        
+        <!-- Final CTA -->
+        <div class="final-cta">
+            <h2>Stop Building From Scratch</h2>
+            <p>Join developers who ship faster. Get everything you need to launch your SaaS.</p>
+            
             <a href="#" class="btn-primary">
                 Get Started — $299
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
             </a>
-            <p class="trust-text">
-                <span>30-day guarantee</span>•<span>Instant download</span>•<span>Lifetime updates</span>
-            </p>
-        </div>
-    </section>
-    
-    <!-- Stats -->
-    <section class="stats">
-        <div class="stat">
-            <div class="stat-number">40+</div>
-            <div class="stat-label">Custom Components</div>
-        </div>
-        <div class="stat">
-            <div class="stat-number">100+</div>
-            <div class="stat-label">Hours Saved</div>
-        </div>
-        <div class="stat">
-            <div class="stat-number">323</div>
-            <div class="stat-label">Unit Tests</div>
-        </div>
-    </section>
-    
-    <!-- Benefits -->
-    <section class="benefits">
-        <h2 class="section-title">Everything You Need</h2>
-        
-        <div class="benefits-grid">
-            <div class="benefit">
-                <div class="benefit-icon">🔐</div>
-                <h3>Authentication Ready</h3>
-                <p>JWT-based auth with Spring Security. Register, login, password reset — all working out of the box.</p>
-            </div>
-            
-            <div class="benefit">
-                <div class="benefit-icon">💳</div>
-                <h3>Stripe Integration</h3>
-                <p>Subscriptions, one-time payments, and customer portal. Tax handling included.</p>
-            </div>
-            
-            <div class="benefit">
-                <div class="benefit-icon">📊</div>
-                <h3>Admin Dashboard</h3>
-                <p>User management, analytics, and role-based access control. Ready for your business logic.</p>
-            </div>
-            
-            <div class="benefit">
-                <div class="benefit-icon">🎨</div>
-                <h3>40 Custom Components</h3>
-                <p>No Material, no Bootstrap. Clean CSS variables, dark mode, fully customizable.</p>
-            </div>
-            
-            <div class="benefit">
-                <div class="benefit-icon">🐳</div>
-                <h3>Docker Ready</h3>
-                <p>Production Docker Compose files included. Deploy anywhere in minutes.</p>
-            </div>
-            
-            <div class="benefit">
-                <div class="benefit-icon">🧪</div>
-                <h3>Well Tested</h3>
-                <p>323 unit tests with comprehensive coverage. Ship with confidence.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Tech Stack -->
-    <section class="tech-section">
-        <h2>Built with proven technologies</h2>
-        
-        <div class="tech-logos">
-            <div class="tech-logo">
-                <!-- Angular Logo SVG -->
-                <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M12 2L2 7l1.5 12.5L12 22l8.5-2.5L22 7L12 2z" fill="#DD0031"/>
-                    <path d="M12 2v20l8.5-2.5L22 7L12 2z" fill="#C3002F"/>
-                    <path d="M12 4.5L6.5 17h2l1.1-2.8h4.8l1.1 2.8h2L12 4.5zm1.6 8h-3.2L12 8.1l1.6 4.4z" fill="#fff"/>
-                </svg>
-                <span>Angular 19</span>
-            </div>
-            
-            <div class="tech-logo">
-                <!-- Spring Boot Logo SVG -->
-                <svg viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="10" fill="#6DB33F"/>
-                    <path d="M7 8c0-1 1-2 3-2s3 1 3 2c0 2-3 2-3 4h2c0-1 3-2 3-4 0-2-2-3-5-3S5 6 5 8c0 4 6 4 6 8h2c0-5-6-5-6-8z" fill="#fff"/>
-                    <circle cx="12" cy="19" r="1" fill="#fff"/>
-                </svg>
-                <span>Spring Boot 4</span>
-            </div>
-        </div>
-    </section>
-    
-    <!-- FAQ -->
-    <section class="faq">
-        <h2 class="section-title">Frequently Asked</h2>
-        
-        <div class="faq-item">
-            <h3>Is this right for my project?</h3>
-            <p>Perfect for B2B SaaS, admin panels, and dashboards. If you're building with Angular and want a Java backend, this saves you weeks of setup.</p>
         </div>
         
-        <div class="faq-item">
-            <h3>What's the refund policy?</h3>
-            <p>30-day money-back guarantee. If it's not what you expected, email us for a full refund. No questions asked.</p>
-        </div>
-        
-        <div class="faq-item">
-            <h3>What does the license allow?</h3>
-            <p>Use it for unlimited personal and commercial projects. You can modify it however you like. Just don't resell or redistribute the kit itself.</p>
-        </div>
-        
-        <div class="faq-item">
-            <h3>Do you offer support?</h3>
-            <p>Documentation and code comments are included. For questions, email support is available. Bug reports are always welcome.</p>
-        </div>
-        
-        <div class="faq-item">
-            <h3>Will I get updates?</h3>
-            <p>Yes, lifetime access to all updates. Major version upgrades may be separate, but minor updates and bug fixes are included.</p>
-        </div>
-    </section>
-    
-    <!-- Final CTA -->
-    <section class="final-cta">
-        <h2>Stop Building From Scratch</h2>
-        <p>Join developers who ship faster. Get everything you need to launch your SaaS.</p>
-        
-        <a href="#" class="btn-primary">
-            Get Started — $299
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-        </a>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
-        </div>
-        <p class="copyright">© 2026 SaaS Starter Kit. All rights reserved.</p>
-    </footer>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <p class="copyright">© 2026 SaaS Starter Kit. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
